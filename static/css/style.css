@@ -43,7 +43,7 @@ form {
 }
 
 label {
-    display: block; /* Cada label ocupa sua própria linha */
+    display: block; 
     margin-bottom: 5px; /* Espaço abaixo de cada label */
     font-weight: bold; /* Torna o texto das labels negrito */
 }
