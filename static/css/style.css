@@ -1,0 +1,79 @@
+/* Reset básico para garantir consistência entre navegadores */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif; /* Fonte padrão limpa e fácil de ler */
+    background-color: #f9f9f9; /* Cor de fundo suave para não cansar os olhos */
+    color: #333; /* Cor de texto escura para contraste adequado */
+    line-height: 1.6; /* Espaçamento de linha para melhor legibilidade */
+    padding: 20px; /* Padding para afastar o conteúdo das bordas da tela */
+}
+
+h1 {
+    color: #026e00; /* Cor verde escura para o título, indicando natureza/ambiental */
+    text-align: center; /* Centraliza o título na página */
+    margin: 20px 0; /* Margem acima e abaixo do título */
+}
+
+.map-container {
+    max-width: 900px; /* Limita a largura máxima do contêiner do mapa */
+    margin: 0 auto; /* Centraliza o contêiner */
+}
+
+#map {
+    width: 100%; /* O mapa ocupa toda a largura disponível do container */
+    height: 500px; /* Altura fixa para o mapa */
+    margin-bottom: 20px; /* Espaço abaixo do mapa antes do próximo conteúdo */
+    border-radius: 8px; /* Bordas arredondadas para estética */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1); /* Sombra leve para destacar o mapa */
+}
+
+form {
+    background: white; /* Fundo branco para o formulário */
+    padding: 20px; /* Padding interno para não deixar os elementos colados nas bordas */
+    border: 1px solid #ccc; /* Borda sutil para o formulário */
+    border-radius: 8px; /* Bordas arredondadas */
+    margin: 0 auto; /* Centraliza o formulário horizontalmente */
+    max-width: 500px; /* Largura máxima para evitar um formulário muito largo em telas grandes */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1); /* Sombra suave para destacar o formulário */
+}
+
+label {
+    display: block; /* Cada label ocupa sua própria linha */
+    margin-bottom: 5px; /* Espaço abaixo de cada label */
+    font-weight: bold; /* Torna o texto das labels negrito */
+}
+
+input[type="text"],
+select {
+    width: 100%; /* Faz com que os inputs e selects ocupem toda a largura disponível */
+    padding: 10px; /* Padding para facilitar a digitação */
+    margin-bottom: 15px; /* Espaço abaixo de cada input/select */
+    border: 1px solid #ccc; /* Borda sutil para inputs */
+    border-radius: 4px; /* Bordas levemente arredondadas para inputs e selects */
+}
+
+button {
+    width: 100%; /* Botão ocupa toda a largura disponível */
+    padding: 12px 20px; /* Padding maior para tornar o botão mais fácil de clicar */
+    background-color: #007BFF; /* Cor azul para o botão, fácil de reconhecer como clicável */
+    color: white; /* Texto do botão em branco para alto contraste */
+    font-size: 16px; /* Tamanho de fonte maior para o texto do botão */
+    border: none; /* Sem borda para um look mais limpo */
+    border-radius: 4px; /* Bordas arredondadas para o botão */
+    cursor: pointer; /* Cursor do tipo ponteiro para indicar que o botão é clicável */
+    transition: background-color 0.3s; /* Transição suave para hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Cor mais escura no hover para feedback visual */
+}
+
+@media (max-width: 768px) {
+    .map-container {
+        width: 100%;}
+    }

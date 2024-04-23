@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denúncia Ambiental</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body>
+    <h1>Formulário de Denúncia Ambiental</h1>
+    <form id="denunciaForm">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+
+        <label for="tipoDenuncia">Tipo de Denúncia:</label>
+        <select id="tipoDenuncia" name="tipoDenuncia">
+            <option value="Desmatamento">Desmatamento</option>
+            <option value="Poluição">Poluição</option>
+        </select>
+
+        <label for="localizacao">Localização:</label>
+        <input type="text" id="localizacao" name="localizacao" placeholder="Digite um endereço ou clique em 'Usar Localização Atual'">
+
+        <button type="button" onclick="useCurrentLocation()">Usar Localização Atual</button><br><br>
+
+        <button type="submit">Enviar Denúncia</button>
+    </form>
+    
+    <div class="map-container">
+        <div id="map"></div>
+    </div>
+    
+    <script>
+        var map = L.map('map').setView([-23.5505, -46.6333], 13);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        function useCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    var pos = position.coords.latitude + ", " + position.coords.longitude;
+                    document.getElementById('localizacao').value = pos;
+                }, function() {
+                    alert('Falha ao obter a localização.');
+                });
+            } else {
+                alert('Geolocalização não é suportada neste navegador.');
+            }
+        }
+    </script>
+</body>
+</html>
